@@ -9,6 +9,7 @@ import { AuthService } from '../_services/auth.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
+
   constructor(private authService: AuthService) { }
 
 
@@ -18,9 +19,12 @@ export class NavComponent implements OnInit {
   login(){
     this.authService.login(this.model).subscribe(next =>{
       console.log('Logged in successfully');
+     
     }, error => {
       console.log('Failed to login');
     });
   }
+
+
 
 }
